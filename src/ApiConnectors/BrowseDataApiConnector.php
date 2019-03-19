@@ -25,10 +25,10 @@ class BrowseDataApiConnector extends BaseApiConnector
      * @return \PhpTwinfield\BrowseDefinition
      * @throws Exception
      */
-    public function getBrowseDefinition(string $code)
+    public function getBrowseDefinition(string $code, Office $office = null)
     {
         // Make a request to read the browse definition of the given browse code.
-        $requestBrowseDefinition = new BrowseDefinition($code);
+        $requestBrowseDefinition = new BrowseDefinition($code, $office);
 
         // Send the Request document and set the response to this instance.
         $response = $this->sendXmlDocument($requestBrowseDefinition);
